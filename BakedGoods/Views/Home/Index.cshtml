@@ -16,7 +16,7 @@
 <ul>
     @foreach (var flavor in ViewBag.Flavors)
     {
-        <li>@flavor.Name</li>
+        <li>@Html.ActionLink($"{flavor.Name}", "Show", "Pastries", new { id = flavor.FlavorId })</li>
     }
 </ul>
 

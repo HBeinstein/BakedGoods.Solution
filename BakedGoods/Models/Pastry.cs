@@ -1,9 +1,17 @@
-namespace ProjectName.Models
+using System.Collections.Generic;
+
+namespace BakedGoods.Models
 {
-  public class ClassName
+  public class Pastry
   {
 
-    // properties, methods, etc. will go here.
+    public Pastry()
+    {
+      this.Flavors = new HashSet<PastryFlavor>();
+    }
 
+    public int PastryId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<PastryFlavor> Flavors { get; }
   }
 }

@@ -6,9 +6,25 @@
 
 <h1>Engineer/Machine Tracker</h1>
 
-<p>@Html.ActionLink("See All Flavors", "Index", "Flavors")</p>
+<p>@Html.ActionLink("See a list of just Flavors", "Index", "Flavors")</p>
 
-<p>@Html.ActionLink("See All Pastries", "Index", "Pastries")</p>
+<p>@Html.ActionLink("See a list of just Pastries", "Index", "Pastries")</p>
 
-@ViewBag.Flavors;
-@ViewBag.Pastries;
+<h2>See all current pastries and flavors below:</h2>
+
+<h4>Flavors:</h4>
+<ul>
+    @foreach (var flavor in ViewBag.Flavors)
+    {
+        <li>@flavor.Name</li>
+    }
+</ul>
+
+<h4>Pastries:</h4>
+<ul>
+    @foreach (var pastry in ViewBag.Pastries)
+    {
+        <li>@Html.ActionLink($"{pastry.Name}", "Show", "Pastries", new { id = pastry.PastryId })</li>
+    }
+</ul>
+

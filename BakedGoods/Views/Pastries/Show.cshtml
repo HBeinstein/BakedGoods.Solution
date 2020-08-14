@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+
+@using BakedGoods.Models;
+@model BakedGoods.Models.Pastry;
+
+<h2>Pastry Details:</h2>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.Flavors.Count == 0)
+{
+  <p>This pastry doesn't come in any flavors yet!</p>
+  <p>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.PastryId})</p>
+}
+else
+{
+  <h2>The @Html.DisplayFor(model => model.Name) comes in these flavors:</h2>
+  <ul>
+  @foreach(var join in Model.Flavors)
+  {
+    <li>@Html.ActionLink($"{join.Flavor.Name}", "Show", "Flavors", new { id = join.FlavorId})</li>
+    @using (Html.BeginForm("RemoveFlavor", "Pastries"))
+    {
+      @Html.Hidden("joinId", @join.PastryFlavorId)
+      <input type="submit" value="Remove flavor from pastry"/>
+    }
+  }
+  </ul>
+}
+  <p>@Html.ActionLink("Edit pastry profile", "Edit", new { id = Model.PastryId})</p>
+  <p>@Html.ActionLink("Add another flavor", "AddFlavor", new { id = Model.PastryId})</p>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>

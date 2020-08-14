@@ -1,6 +1,6 @@
-# _Name_
+# Baked Goods Tracker
 
-#### _Brief Description, 7/14/2020_
+#### _A .NET Core MVC App to track baked goods and their flavors including authentification, 7/14/2020_
 
 #### By _**Hannah Beinstein**_
 
@@ -12,15 +12,21 @@ _Description_
 
 | Spec | Input | Output |
 | :-------------      | :------------- | :------------- |
-| ** 1. Program will take in inputted word | "apple" | -- |
-| ** 2. Program will return true if word is a palindrome| "hannah" | true |
-| ** 3. Program will return false if word is not a palindrome | "word" | false |
+| 1. Program will display an error message if no pastries have been added to database | -- | "No pastries have been added yet!" |
+| 2. Program will display an error message if no flavors have been added to database | -- | "No flavors have been added yet!" |
+| 3. Program will add new pastry type to database | "add pastry type" | "Baguette" |
+| 4. Program will add new flavor to database | "add flavor" | "Cheddar" |
+| 5. Program will display a list of all pastry types | -- | "Baguette, Bagel, Scone, Muffin" |
+| 6. Program will display a list of all flavors | -- | "Cheddar, Berry, Plain, Maple" |
+| 7. Program will display a list of all flavors belonging to a pastry type | Pastry Types: "Bagel" | Flavors: "Blueberry, Maple, Plain" |
+| 8. Program will display a list of all pastry types belonging to a flavor| Flavors: "Blueberry" | Pastry Types: "Bagel, Scone, Muffin" |
 
 ## Setup/Installation Requirements
 
-* _Clone or download this repository located at ***
-* _Run $ dotnet restore to download all dev dependencies_
-* _Run $ dotnet build to create project_
+* _Clone or download this repository located at https://github.com/HBeinstein/BakedGoods.Solution_
+* _TO CREATE DATABASE: Run $ dotnet ef database update in your root directory._
+* _Run $ dotnet restore in your root directory to download all dev dependencies._
+* _Run $ dotnet run in your root directory to create project._
 
 ## Known Bugs
 

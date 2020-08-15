@@ -4,7 +4,6 @@ namespace BakedGoods.Models
 {
   public class Pastry
   {
-
     public Pastry()
     {
       this.Flavors = new HashSet<PastryFlavor>();

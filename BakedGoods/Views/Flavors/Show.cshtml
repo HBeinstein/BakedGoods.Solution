@@ -3,7 +3,7 @@
 }
 
 @using BakedGoods.Models;
-@model BakedGoods.Models.Flavor
+@model BakedGoods.Models.Flavor;
 
 <h2>Flavor Details:</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
@@ -15,8 +15,8 @@
 }
 else
 {
-  <ul>
   <h2>This flavor is associated with these pastries:</h2>
+  <ul>
   @foreach(var join in Model.Pastries)
   {
     <li>@Html.ActionLink($"{join.Pastry.Name}", "Details", "Pastries", new { id = join.PastryId})</li>
@@ -26,7 +26,6 @@ else
       <input type="submit" value="Remove Pastry"/>
     }
   }
-
   </ul>
 }
   <p>@Html.ActionLink("Edit the flavor description", "Edit", new { id = Model.FlavorId})</p>

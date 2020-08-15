@@ -2,7 +2,6 @@
   Layout = "_Layout";
 }
 
-
 @using BakedGoods.Models;
 @model BakedGoods.Models.Pastry;
 
@@ -12,7 +11,7 @@
 @if(@Model.Flavors.Count == 0)
 {
   <p>This pastry doesn't come in any flavors yet!</p>
-  <p>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.PastryId})</p>
+  <p>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.PastryId })</p>
 }
 else
 {

@@ -4,7 +4,7 @@
 
 @model List<BakedGoods.Models.Flavor>
 
-<h1>Engineer/Machine Tracker</h1>
+<h1>Pastry/Flavor Tracker</h1>
 
 <p>@Html.ActionLink("See a list of just Flavors", "Index", "Flavors")</p>
 
@@ -16,7 +16,7 @@
 <ul>
     @foreach (var flavor in ViewBag.Flavors)
     {
-        <li>@Html.ActionLink($"{flavor.Name}", "Show", "Pastries", new { id = flavor.FlavorId })</li>
+        <li>@Html.ActionLink($"{flavor.Name}", "Show", "Flavors", new { id = flavor.FlavorId })</li>
     }
 </ul>
 

@@ -1,17 +1,17 @@
 @{
-  Layout = "_Layout";
+    Layout = "_Layout";
 }
 
 @model List<BakedGoods.Models.Flavor>
 
 <h1>Pastry/Flavor Tracker</h1>
+<h4>Welcome to our bakery! With this system you can see all of the flavors and all of the different types of pastries we offer at our shop. To make changes to the flavor and pastry options, please register for an account or log in if you already have an account.</h4>
 
 <p>@Html.ActionLink("See a list of just Flavors", "Index", "Flavors")</p>
-
 <p>@Html.ActionLink("See a list of just Pastries", "Index", "Pastries")</p>
 
+<hr>
 <h2>See all current pastries and flavors below:</h2>
-
 <h4>Flavors:</h4>
 <ul>
     @foreach (var flavor in ViewBag.Flavors)
@@ -28,3 +28,10 @@
     }
 </ul>
 
+<hr>
+<p>@Html.ActionLink("Register", "Register", "Account")</p>
+<p>@Html.ActionLink("Log in", "Login", "Account")</p>
+@using (Html.BeginForm("LogOff", "Account"))
+{
+    <input type="submit" class="btn btn-default" value="Log out" />
+}

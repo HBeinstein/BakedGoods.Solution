@@ -1,12 +1,19 @@
-using BakedGoods.Models;
+  
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using BakedGoods.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace BakedGoods.Controllers
 {
+  [Authorize]
   public class PastriesController : Controller
   {
     private readonly BakedGoodsContext _db;

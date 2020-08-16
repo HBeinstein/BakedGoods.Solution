@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
 using BakedGoods.Models;
 
 namespace BakedGoods
@@ -27,6 +28,20 @@ namespace BakedGoods
       services.AddEntityFrameworkMySql()
         .AddDbContext<BakedGoodsContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+
+      services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<BakedGoodsContext>()
+        .AddDefaultTokenProviders();
+
+      services.Configure<IdentityOptions>(options =>
+      {
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 0;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequiredUniqueChars = 0;
+      });
     }
 
     public void Configure(IApplicationBuilder app)
@@ -34,6 +49,8 @@ namespace BakedGoods
       app.UseDeveloperExceptionPage();
 
       app.UseStaticFiles();
+
+      app.UseAuthentication();
 
       app.UseMvc(routes =>
       {

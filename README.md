@@ -1,12 +1,12 @@
 # Baked Goods Tracker
 
-#### _A .NET Core MVC App to track baked goods and their flavors including authentification, 7/14/2020_
+#### _A .NET Core MVC App to track baked goods and their flavors including authentication, 7/14/2020_
 
 #### By _**Hannah Beinstein**_
 
 ## Description
 
-_Description_
+_This project is an program created to practice MVC web app design, many-to-many relationships, and authentication using Identity. The program contains two classes, one for Flavors and one for Pastries. The program can display a list of flavors and their associated pastries, a list of pastries and their associated flavors, and also includes functionality to add and remove both flavors and pastries. A user can view a list of all current pastries and flavors from the project home-page, but must register and log in to access any other CRUD methods._
 
 ## Specs
 

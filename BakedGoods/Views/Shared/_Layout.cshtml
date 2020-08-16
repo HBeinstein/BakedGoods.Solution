@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
+    @Html.Partial("_NavBar")
+    <div class="flex container">
+      @RenderBody()
+      @Html.Partial("_Footer")
+    </div>
   </body>
 </html>

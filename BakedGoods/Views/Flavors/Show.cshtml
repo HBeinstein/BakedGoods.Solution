@@ -19,7 +19,7 @@ else
   <ul>
   @foreach(var join in Model.Pastries)
   {
-    <li>@Html.ActionLink($"{join.Pastry.Name}", "Details", "Pastries", new { id = join.PastryId})</li>
+    <li>@Html.ActionLink($"{join.Pastry.Name}", "Show", "Pastries", new { id = join.PastryId})</li>
     @using (Html.BeginForm("RemovePastry", "Flavors"))
     {
       @Html.Hidden("joinId", @join.PastryFlavorId)

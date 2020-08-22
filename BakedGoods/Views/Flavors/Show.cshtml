@@ -11,7 +11,6 @@
 @if(@Model.Pastries.Count == 0)
 {
   <p>This flavor doesn't have any pastries associated with it yet!</p>
-  <p>@Html.ActionLink("Add pastry", "AddPastry", new { id = Model.FlavorId})</p>
 }
 else
 {
@@ -30,7 +29,7 @@ else
 }
 
   <p>@Html.ActionLink("Edit the flavor description", "Edit", new { id = Model.FlavorId})</p>
-  <p>@Html.ActionLink("Add another pastry", "AddPastry", new { id = Model.FlavorId})</p>
+  <p>@Html.ActionLink("Add a pastry to this flavor", "AddPastry", new { id = Model.FlavorId})</p>
   <p>@Html.ActionLink("Home", "Index", "Home")</p>
   @using (Html.BeginForm("Delete", "Flavors"))
     {

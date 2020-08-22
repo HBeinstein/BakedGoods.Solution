@@ -28,6 +28,12 @@ else
   }
   </ul>
 }
+
   <p>@Html.ActionLink("Edit the flavor description", "Edit", new { id = Model.FlavorId})</p>
   <p>@Html.ActionLink("Add another pastry", "AddPastry", new { id = Model.FlavorId})</p>
   <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  @using (Html.BeginForm("Delete", "Flavors"))
+    {
+      @Html.Hidden("id", Model.FlavorId)
+      <input type="submit" value="Delete this flavor"/>
+    }

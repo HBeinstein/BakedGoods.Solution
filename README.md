@@ -22,24 +22,23 @@ _This project is an program created to practice MVC web app design, many-to-many
 | 8. Program will display a list of all pastry types belonging to a flavor| Flavors: "Blueberry" | Pastry Types: "Bagel, Scone, Muffin" |
 
 ## Setup/Installation Requirements
+```
+* Make sure you have .NET Core installed. If you don't, it can be found here https://dotnet.microsoft.com/download/dotnet-core/2.2
+* Mac users, download MySQL here: https://dev.mysql.com/downloads/file/?id=484914
+* Windows users, download MySQL here: https://dev.mysql.com/downloads/file/?id=484919
+```
 
 * _Clone or download this repository located at https://github.com/HBeinstein/BakedGoods.Solution_
-* _TO CREATE DATABASE: Run $ dotnet ef database update in your root directory._
+* _TO CREATE DATABASE: Navigate to appsettings.json and replace "YOURDBNAMEHERE" with the name of your database, and "YOURPWDHERE" with the the password you use for SQL (or any other DB program). Run $ dotnet ef database update in your root directory to create your database._
 * _Run $ dotnet restore in your root directory to download all dev dependencies._
-* _Run $ dotnet run in your root directory to create project._
-
-## Known Bugs
-
-_No known bugs_
-
-## Support and contact details
-
-_{Please contact me at with any known bugs or support issues.}_
+* _Run $ dotnet run in your root directory to build project and launch server._
+* _Open your server in your browser of choice_
 
 ## Technologies Used
 
-* _GitHub_
+* _EFC_
 * _C#_
+* ASP.NET Core
 
 ### License
 
